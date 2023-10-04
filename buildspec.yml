@@ -1,0 +1,27 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - pwd
+  pre_build:
+    commands:
+      - echo Pre Build started on `date`
+      - echo CODEBUILD_SOURCE_VERSION $(CODEBUILD_SOURCE_VERSION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Command ${COMMAND}
+      - echo Environment ${ENVIRONMENT}
+      - echo Role ARN ${CLIENT_ROLE_ARN}
+      - ls -al
+      - make ${COMMAND} ENVIRONMENT=${ENVIRONMENT} ENVIRONMENT_SHORT=${ENVIRONMENT_SHORT} CLIENT_ROLE_ARN=${CLIENT_ROLE_ARN}
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - buildspec.yml
+    - assume_role.sh
+    - Makefile
+    - src/**/*
+  discard-paths: no

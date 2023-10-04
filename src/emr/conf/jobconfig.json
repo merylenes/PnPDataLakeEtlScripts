@@ -1,0 +1,1281 @@
+{
+    "articlemovements": {
+        "description": "Article Movements",
+        "dataset_stage": "prod",
+        "dataset_name": "hrmvw01",
+        "table": "article_move_bw_hrmvw01",
+        "acz_prefix": "bw/td/hrmvw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/article_movements/article_move_bw_hrmvw01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.shuffle.service.enabled": true,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 5000,
+                "spark.driver.memory": "2g",
+                "spark.executor.cores": 1,
+                "spark.driver.cores": 1
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "availability": {
+        "description": "Availability dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hravm01",
+        "table": "availability_bw_hravm01",
+        "acz_prefix": "bw/td/hravm01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/availability/availability_bw_hravm01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.shuffle.service.enabled": true,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 5000,
+                "spark.driver.memory": "2g",
+                "spark.executor.cores": 1,
+                "spark.driver.cores": 1
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "dcrcheader": {
+        "description": "DCRC Header dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "dcrc_hd",
+        "table": "erp_dcrc_hd",
+        "acz_prefix": "erp/td/dcrc_hd",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/dcrc/erp_dcrc_hd",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "dcrcitem": {
+        "description": "DCRC Item dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "dcrc_it",
+        "table": "erp_dcrc_it",
+        "acz_prefix": "erp/td/dcrc_it",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/dcrc/erp_dcrc_it",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 200,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "dcrcoversupplyclaims": {
+        "description": "DCRC Oversupply Claims dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "dcrc_ovh",
+        "table": "erp_dcrc_ovh",
+        "acz_prefix": "erp/td/dcrc_ovh",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/dcrc/erp_dcrc_ovh",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "dcrcticketlog": {
+        "description": "DCRC Ticket Log dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "dcrc_lg",
+        "table": "erp_dcrc_lg",
+        "acz_prefix": "erp/td/dcrc_lg",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/dcrc/erp_dcrc_lg",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "dcrcticketstatus": {
+        "description": "DCRC Ticket Status dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "dcrc_st",
+        "table": "erp_dcrc_st",
+        "acz_prefix": "erp/td/dcrc_st",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/dcrc/erp_dcrc_st",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "eban": {
+        "description": "EBAN dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "eban",
+        "table": "eban_erp_eban",
+        "acz_prefix": "erp/td/eban",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/eban/eban_erp_eban",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.executor.memory": "37800M",
+                "spark.driver.memory": "37799M",
+                "spark.executor.memoryOverhead": 4200,
+                "spark.sql.shuffle.partitions": 2000,
+                "spark.default.parallelism": 2000,
+                "spark.executor.cores": 5,
+                "spark.driver.cores": 5
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "forecasting": {
+        "description": "Forecasting Accuracy dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hsfaw01",
+        "table": "forecasting_bw_hsfaw01",
+        "acz_prefix": "bw/td/hsfaw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/forecasting/forecasting_bw_hsfaw01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.executor.memory": "21G",
+                "spark.executor.memoryOverhead": 4096,
+                "spark.sql.shuffle.partitions": 2000,
+                "spark.default.parallelism": 2000,
+                "spark.executor.cores": 4
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "gllineitems": {
+        "description": "General Ledger Line Items dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hfglw02",
+        "table": "gl_line_items_bw_hfglw02",
+        "acz_prefix": "bw/td/hfglw02",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/gl_line_items/gl_line_items_bw_hfglw02",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-finance-euw1",
+                "stz": "pnp-data-lake-prod-stz-finance-euw1"
+            },
+            "db": "stz-finance-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-finance-euw1",
+                "stz": "pnp-data-lake-dev-stz-finance-euw1"
+            },
+            "db": "stz-finance-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 200,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "nonvaluatedcos": {
+        "description": "NON Valuated COS dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hfglm02",
+        "table": "cos_bw_hfglm02",
+        "acz_prefix": "bw/td/hfglm02",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/cos/cos_bw_hfglm02",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-finance-euw1",
+                "stz": "pnp-data-lake-prod-stz-finance-euw1"
+            },
+            "db": "stz-finance-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-finance-euw1",
+                "stz": "pnp-data-lake-dev-stz-finance-euw1"
+            },
+            "db": "stz-finance-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "marginmanualadjustments": {
+        "description": "Margin Manual Adjustments dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hfglm03",
+        "table": "margin_man_adj_hfglm03",
+        "acz_prefix": "bw/td/hfglm03",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/margin_man_adj/margin_man_adj_hfglm03",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-finance-euw1",
+                "stz": "pnp-data-lake-prod-stz-finance-euw1"
+            },
+            "db": "stz-finance-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-finance-euw1",
+                "stz": "pnp-data-lake-dev-stz-finance-euw1"
+            },
+            "db": "stz-finance-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "pnppointsaccount": {
+        "description": "PnP Points Account dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hclpw01",
+        "table": "points_account_bw_hclpw01",
+        "acz_prefix": "bw/td/hclpw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/points_account/points_account_bw_hclpw01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-crm-euw1",
+                "stz": "pnp-data-lake-prod-stz-crm-euw1"
+            },
+            "db": "stz-crm-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-crm-euw1",
+                "stz": "pnp-data-lake-dev-stz-crm-euw1"
+            },
+            "db": "stz-crm-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },   
+    "pos": {
+        "description": "POS CI data mart dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hprcm08",
+        "table": "pos_bw_hprcm08",
+        "acz_prefix": "bw/td/hprcm08",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/pos/pos_bw_hprcm08",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-pos-euw1",
+                "stz": "pnp-data-lake-prod-stz-pos-euw1"
+            },
+            "db": "stz-pos-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-pos-euw1",
+                "stz": "pnp-data-lake-dev-stz-pos-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-pos-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 2200,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "poscore": {
+        "description": "POS Core dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hprcw01",
+        "table": "pos_bw_hprcw01",
+        "acz_prefix": "bw/td/hprcw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/pos/pos_bw_hprcw01",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-pos-euw1",
+                "stz": "pnp-data-lake-prod-stz-pos-euw1"
+            },
+            "db": "stz-pos-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-pos-euw1",
+                "stz": "pnp-data-lake-dev-stz-pos-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-pos-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "purchasingdocumentdate": {
+        "description": "Purchasing Goods Receipt dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrpuw01",
+        "table": "purchasing_bw_hrpuw01",
+        "acz_prefix": "bw/td/hrpuw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/purchasing/purchasing_bw_hrpuw01",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-retail-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.shuffle.service.enabled": true,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.memory": "16998m",
+                "spark.executor.memoryOverhead": "3399m",
+                "spark.sql.shuffle.partitions": 5000,
+                "spark.driver.memory": "30g",
+                "spark.executor.cores": 2,
+                "spark.driver.cores": 1
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "purchasinggoodsreceipt": {
+        "description": "Purchasing Goods Receipt dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrpuw03",
+        "table": "purchasing_bw_hrpuw03",
+        "acz_prefix": "bw/td/hrpuw03",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/purchasing/purchasing_bw_hrpuw03",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-retail-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.shuffle.service.enabled": true,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.memory": "16998m",
+                "spark.executor.memoryOverhead": "3399m",
+                "spark.sql.shuffle.partitions": 5000,
+                "spark.driver.memory": "30g",
+                "spark.executor.cores": 2,
+                "spark.driver.cores": 1
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "rebates": {
+        "description": "Rebates dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrrbw01",
+        "table": "rebates_bw_hrrbw01",
+        "acz_prefix": "bw/td/hrrbw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/rebates/rebates_bw_hrrbw01",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-retail-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.executor.memory": "21G",
+                "spark.executor.memoryOverhead": 4096,
+                "spark.sql.shuffle.partitions": 2000,
+                "spark.default.parallelism": 2000,
+                "spark.executor.cores": 4
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "sales": {
+        "description": "Sales core dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrsaw01",
+        "table": "sales_bw_hrsaw01",
+        "acz_prefix": "bw/td/hrsaw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/sales/sales_bw_hrsaw01",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-retail-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.executor.memory": "21G",
+                "spark.executor.memoryOverhead": 4096,
+                "spark.sql.shuffle.partitions": 2000,
+                "spark.default.parallelism": 2000,
+                "spark.executor.cores": 4
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "salesactualdatamart": {
+        "description": "Sales Actual Data Mart dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrsam01",
+        "table": "sales_bw_hrsam01",
+        "acz_prefix": "bw/td/hrsam01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/sales/sales_bw_hrsam01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "salesonlineshoppingdatamart": {
+        "description": "Sales Orders dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrsam04",
+        "table": "sales_bw_hrsam04",
+        "acz_prefix": "bw/td/hrsam04",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/sales/sales_bw_hrsam04",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "salesorders": {
+        "description": "Sales Online Shopping Datamart dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrsow01",
+        "table": "sales_bw_hrsow01",
+        "acz_prefix": "bw/td/hrsow01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/sales/sales_bw_hrsow01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    }, 
+    "salesplancategorydatamart": {
+        "description": "Sales Plan Category DataMart dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrsam03",
+        "table": "sales_bw_hrsam03",
+        "acz_prefix": "bw/td/hrsam03",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/sales/sales_bw_hrsam03",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "db": "stz-retail-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "sitearticle": {
+        "description": "Site Article Master dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrsmw01",
+        "table": "sitearticle_bw_sitearticle_01",
+        "acz_prefix": "bw/md/hrsmw01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "md/sitearticle/sitearticle_bw_sitearticle_01",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-retail-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "swr": {
+        "description": "Shrinkage, Waste and RTC dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hrcfm01",
+        "table": "swr_bw_hrcfm01",
+        "acz_prefix": "bw/td/hrcfm01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/swr/swr_bw_hrcfm01",
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-retail-euw1",
+                "stz": "pnp-data-lake-prod-stz-retail-euw1"
+            },
+            "db": "stz-retail-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-retail-euw1",
+                "stz": "pnp-data-lake-dev-stz-retail-euw1"
+            },
+            "data_age": 7,
+            "snowflake": false,
+            "db": "stz-retail-dev"
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.executor.memory": "21G",
+                "spark.executor.memoryOverhead": 4096,
+                "spark.sql.shuffle.partitions": 2000,
+                "spark.default.parallelism": 2000,
+                "spark.executor.cores": 4
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    },
+    "valuatedcos": {
+        "description": "Valuated COS dataset",
+        "dataset_stage": "prod",
+        "dataset_name": "hfglm01",
+        "table": "cos_bw_hfglm01",
+        "acz_prefix": "bw/td/hfglm01",
+        "spark_job": "bin/allDatasets.py",
+        "stz_prefix": "td/cos/cos_bw_hfglm01",
+        "data_age": 7,
+        "processed_prefix": "processed",
+        "prod": {
+            "bucket": {
+                "acz": "pnp-data-lake-prod-acz-finance-euw1",
+                "stz": "pnp-data-lake-prod-stz-finance-euw1"
+            },
+            "db": "stz-finance-prod"
+        },
+        "dev": {
+            "bucket": {
+                "acz": "pnp-data-lake-dev-acz-finance-euw1",
+                "stz": "pnp-data-lake-dev-stz-finance-euw1"
+            },
+            "db": "stz-finance-dev",
+            "snowflake": false,
+            "data_age": 7
+        },
+        "spark": {
+            "conf": {
+                "spark.dynamicAllocation.enabled": true,
+                "spark.sql.hive.convertMetastoreParquet": false,
+                "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
+                "spark.kryoserializer.buffer.max": "512m",
+                "spark.rdd.compress": true,
+                "spark.shuffle.service.enabled": true,
+                "spark.shuffle.memoryFraction": 0.7,
+                "spark.driver.maxResultSize": "2g",
+                "spark.executor.cores": 1,
+                "spark.executor.memory": "8456m",
+                "spark.executor.memoryOverhead": "1585m",
+                "spark.sql.shuffle.partitions": 11000,
+                "spark.driver.cores": 2,
+                "spark.driver.memory": "8456m"
+            },
+            "jars": [
+                "hdfs:///apps/hudi/lib/httpcore-4.4.11.jar",
+                "hdfs:///apps/hudi/lib/httpclient-4.5.9.jar",
+                "hdfs:///apps/hudi/lib/hudi-spark-bundle.jar",
+                "hdfs:///apps/hudi/lib/spark-avro.jar"
+            ]
+        }
+    }
+}

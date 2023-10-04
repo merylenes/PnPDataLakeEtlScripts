@@ -1,0 +1,7 @@
+aws s3api get-object --bucket pnp-data-lake-dev-acz-pos-euw1 --key bw/td/hprcw01/processed/20220113135252/BW_HPRCW0122_DLT_20210927054805.csv --range bytes=0-4000 BW_HPRCW0122_DLT_20210927054805.csv
+awk -F\| '{printf "%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n",$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$112,$113,$114,$115,$116}' BW_HPRCW0122_DLT_20210927054805.csv
+
+aws s3api get-object --bucket pnp-data-lake-dev-acz-pos-euw1 --key bw/td/hprcw01/V2/BW_HPRCW0123_FUL_20220401_20220419102059.csv --range bytes=0-4000 BW_HPRCW0123_FUL_20220401_20220419102059.csv
+awk -F\| '{printf "%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n",$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$112,$113,$114,$115,$116,$152}' BWl_HPRCW0123_FUL_20220401_20220419102059.csv  > BWs_HPRCW0123_FUL_20220401_20220419102059.csv
+
+awk -F\| "{print NF}" BW_HPRCW0122_DLT_20210927054805.csv
